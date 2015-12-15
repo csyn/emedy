@@ -32,9 +32,9 @@ THE SOFTWARE.
 #define emedy_cth(size) ((size + (sizeof(struct emedy_header**) - 1)) \
 / sizeof(struct emedy_header**))
 
-// used to declare a section of memeory for use by emedy, pass `name` into the
-// emedy_allocate and emedy_reallocate functions as the `nh` argument. this will
-// allocate an array large enough to fit `size` chars, but its length will be
+// used to declare a section of memory for use by emedy, pass `name` into the
+// emedy_allocate and emedy_reallocate functions as the `nh` argument. This will
+// allocate an array large enough to fit `size` chars, its length will be
 // aligned to `sizeof(struct emedy_header**)`
 #define emedy_heap(name, size) struct emedy_header** name[emedy_cth(size)] \
 = {(struct emedy_header**) (nh + (emedy_cth(size) - 1)), 0}
