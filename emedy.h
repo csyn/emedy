@@ -37,7 +37,7 @@ THE SOFTWARE.
 // allocate an array large enough to fit `size` chars, its length will be
 // aligned to `sizeof(struct emedy_header**)`
 #define emedy_heap(name, size) struct emedy_header** name[emedy_cth(size)] \
-= {(struct emedy_header**) (nh + (emedy_cth(size) - 1)), 0}
+= {(struct emedy_header**) (name + (emedy_cth(size) - 1)), 0}
 
 // the first next value points to a NULL pointer. The last `next` value should
 // always point to a 0 the first previous value should also be 0
